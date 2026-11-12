@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Salon de Massothérapie Ashley in Montréal — relaxation massage, traditional massage, and four-hands massage in a calm, private setting." />
+<title>Salon de Massothérapie Ashley | Montréal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110e;
+  --bg-2:#0d1813;
+  --panel:#122019;
+  --panel-2:#17271f;
+  --ivory:#f6f0e5;
+  --muted:#c8c0b3;
+  --gold:#c7a766;
+  --gold-2:#e4cb90;
+  --line:rgba(228,203,144,.22);
+  --shadow:0 24px 70px rgba(0,0,0,.35);
+  --radius:24px;
+  --header:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ivory);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover;background:#17211c}
+button,a{ -webkit-tap-highlight-color:transparent }
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin-bottom:14px}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:1.02;font-weight:600}
+h1{font-size:clamp(3.4rem,8vw,7.6rem);max-width:900px}
+h2{font-size:clamp(2.5rem,5vw,4.9rem)}
+h3{font-size:clamp(1.55rem,2.5vw,2.2rem)}
+p{color:var(--muted)}
+.section{padding:clamp(80px,10vw,140px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#16140e;font-weight:700;letter-spacing:.02em;transition:.25s ease;box-shadow:0 12px 35px rgba(199,167,102,.2)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.secondary{background:rgba(255,255,255,.03);color:var(--ivory);border-color:rgba(255,255,255,.22);box-shadow:none}
+.btn.secondary:hover{border-color:var(--gold)}
+.topbar{position:fixed;inset:0 0 auto;z-index:1000;height:var(--header);display:flex;align-items:center;background:linear-gradient(to bottom,rgba(4,9,7,.84),rgba(4,9,7,.35),transparent);transition:.3s ease}
+.topbar.scrolled{background:rgba(7,14,11,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.brand span{color:var(--gold-2)}
+.navlinks{display:flex;align-items:center;gap:26px;font-size:.92rem}
+.navlinks a:not(.btn){color:#eee8dc;opacity:.9}
+.navlinks a:not(.btn):hover{color:var(--gold-2)}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:white;font-size:1.2rem}
+.hero{min-height:100svh;position:relative;display:grid;align-items:end;overflow:hidden}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-position:center;background-size:cover;transform:scale(1.03)}
+.hero-slide.active{opacity:1}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(4,9,7,.9) 0%,rgba(4,9,7,.62) 46%,rgba(4,9,7,.32) 72%,rgba(4,9,7,.7) 100%),linear-gradient(to top,rgba(5,10,8,.98),transparent 55%)}
+.hero-content{position:relative;z-index:2;padding:calc(var(--header) + 100px) 0 80px}
+.hero-copy{max-width:920px}
+.hero-copy p{font-size:clamp(1rem,2vw,1.22rem);max-width:680px;margin:28px 0 34px;color:#eee6d8}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.trust-strip{margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid rgba(255,255,255,.11);border-radius:18px;overflow:hidden;max-width:880px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+.trust-strip div{padding:18px 20px;background:rgba(5,11,9,.46)}
+.trust-strip strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:white}
+.trust-strip span{font-size:.8rem;color:#d0c6b6}
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.intro-copy p{margin-top:22px;font-size:1.04rem}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.feature{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+.feature b{display:block;color:white;margin-bottom:6px}
+.feature span{font-size:.9rem;color:var(--muted)}
+.photo-stack{position:relative;min-height:540px}
+.photo-stack img{position:absolute;border-radius:26px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+.photo-stack img:nth-child(1){width:72%;height:430px;top:0;right:0}
+.photo-stack img:nth-child(2){width:58%;height:300px;left:0;bottom:0}
+.experience{background:radial-gradient(circle at 12% 18%,rgba(199,167,102,.10),transparent 33%),linear-gradient(180deg,#0c1712,#08110e)}
+.experience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.exp-card{padding:32px 24px;border-radius:22px;background:rgba(255,255,255,.025);border:1px solid var(--line);min-height:245px}
+.exp-card .num{font-family:"Cormorant Garamond",serif;font-size:2.5rem;color:var(--gold-2);margin-bottom:22px}
+.exp-card p{margin-top:10px;font-size:.93rem}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+.section-head p{max-width:580px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid rgba(255,255,255,.08);border-radius:26px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.carousel{position:relative;height:320px;overflow:hidden}
+.carousel img{position:absolute;inset:0;height:100%;opacity:0;transition:opacity .8s ease}
+.carousel img.active{opacity:1}
+.service-body{padding:28px}
+.service-body .desc{margin:14px 0 22px;min-height:110px}
+.price-list{display:grid;gap:10px;margin:20px 0 28px}
+.price-row{display:flex;justify-content:space-between;gap:20px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.09)}
+.price-row span{color:var(--muted)}
+.price-row strong{color:var(--gold-2)}
+.note-box{margin-top:26px;padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(199,167,102,.05);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.note-box ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;color:var(--muted);font-size:.92rem}
+.note-box li:before{content:"•";color:var(--gold-2);margin-right:8px}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:240px 240px;gap:16px}
+.gallery-grid img{height:100%;border-radius:22px;border:1px solid rgba(255,255,255,.08)}
+.gallery-grid img:first-child{grid-row:1/3}
+.callout{margin-top:80px;border-radius:30px;padding:clamp(38px,6vw,72px);background:linear-gradient(135deg,rgba(199,167,102,.18),rgba(255,255,255,.03));border:1px solid var(--line);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;overflow:hidden;position:relative}
+.callout:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(228,203,144,.15);border-radius:50%;right:-120px;top:-140px}
+.callout h2{font-size:clamp(2.5rem,5vw,4.5rem)}
+.callout p{margin-top:15px;max-width:650px}
+.callout-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.reviews{overflow:hidden;background:#0b1511}
+.review-row{display:flex;gap:16px;width:max-content;margin:16px 0;animation:marquee 36s linear infinite}
+.review-row.reverse{animation-direction:reverse;animation-duration:42s}
+.review{width:360px;padding:22px 24px;border-radius:18px;background:#132119;border:1px solid rgba(255,255,255,.07);color:#ded6ca}
+.review .stars{color:var(--gold-2);letter-spacing:.15em;margin-bottom:10px}
+.review small{display:block;margin-top:12px;color:#a99f90}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:start}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.12)}
+.faq-q{width:100%;padding:22px 0;display:flex;justify-content:space-between;gap:20px;border:none;background:none;color:white;text-align:left;font:600 1rem Inter,cursive;cursor:pointer}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 0 20px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px}
+.contact-card{padding:34px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))}
+.contact-card h3{margin-bottom:24px}
+.info{display:grid;gap:19px}
+.info-block small{display:block;text-transform:uppercase;letter-spacing:.16em;color:var(--gold-2);font-size:.68rem;margin-bottom:4px}
+.info-block a,.info-block span{color:white}
+.map{border-radius:24px;overflow:hidden;min-height:430px;border:1px solid rgba(255,255,255,.08)}
+.map iframe{width:100%;height:100%;min-height:430px;border:0;filter:grayscale(.35) contrast(1.05) brightness(.8)}
+footer{padding:42px 0;border-top:1px solid rgba(255,255,255,.08);background:#060d0a}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-grid p{font-size:.84rem}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){
+  .navlinks{position:fixed;top:76px;left:20px;right:20px;display:none;flex-direction:column;align-items:stretch;padding:22px;border-radius:20px;background:rgba(8,17,14,.97);border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+  .navlinks.open{display:flex}.menu-btn{display:block}
+  .trust-strip{grid-template-columns:repeat(2,1fr)}
+  .intro-grid,.faq-grid,.contact-grid,.callout{grid-template-columns:1fr}
+  .experience-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .callout-actions{justify-content:flex-start}
+}
+@media(max-width:700px){
+  .container{width:min(100% - 28px,1180px)}
+  .section{padding:76px 0}
+  .hero-content{padding-bottom:44px}
+  .trust-strip{grid-template-columns:1fr 1fr;margin-top:34px}
+  .intro-grid{gap:38px}.photo-stack{min-height:430px}.photo-stack img:nth-child(1){height:340px}.photo-stack img:nth-child(2){height:230px}
+  .feature-grid,.experience-grid,.services-grid{grid-template-columns:1fr}
+  .section-head{display:block}.section-head p{margin-top:16px}
+  .service-body .desc{min-height:0}
+  .note-box{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}.gallery-grid img:first-child{grid-column:1/3;grid-row:auto}
+  .review{width:300px}
+  .footer-grid{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home">Salon de Massothérapie <span>Ashley</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="tel:+15147265578">Call Now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" aria-label="Salon de Massothérapie Ashley">
+  <div class="hero-slide active" style="background-image:url('https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('https://i.pinimg.com/736x/09/31/eb/0931ebab4602ec51313b49b72bb10c1e.jpg')"></div>
+  <div class="container hero-content">
+    <div class="hero-copy reveal visible">
+      <div class="eyebrow">Massage • Montréal • Côte-des-Neiges</div>
+      <h1>Quiet care. Deep relaxation. A more refined massage experience.</h1>
+      <p>Step into a calm, private setting designed for relaxation, restorative bodywork and unhurried moments of comfort in the heart of Côte-des-Neiges.</p>
+      <div class="hero-actions">
+        <a class="btn" href="tel:+15147265578">Call Now · 514-726-5578</a>
+        <a class="btn secondary" href="#services">View Services & Pricing</a>
+      </div>
+      <div class="trust-strip" aria-label="Experience highlights">
+        <div><strong>Private</strong><span>Comfort-focused atmosphere</span></div>
+        <div><strong>Quiet</strong><span>Space to slow down</span></div>
+        <div><strong>Thoughtful</strong><span>Personalized experience</span></div>
+        <div><strong>Open Daily</strong><span>9:00–11:30</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container intro-grid">
+    <div class="intro-copy reveal">
+      <div class="eyebrow">About the salon</div>
+      <h2>A calm Montréal retreat for body and mind.</h2>
+      <p>Salon de Massothérapie Ashley offers a quiet, clean and private environment where every visit is centered on comfort, attentive care and genuine relaxation. The atmosphere is intentionally understated—soft lighting, warm details and an unhurried rhythm that lets you disconnect from the day.</p>
+      <p>Whether your goal is to release everyday tension, enjoy more focused traditional bodywork, or share the immersive experience of a four-hands massage, the setting is designed to help you settle in and feel at ease.</p>
+      <div class="feature-grid">
+        <div class="feature"><b>Quiet Setting</b><span>A composed atmosphere for uninterrupted rest.</span></div>
+        <div class="feature"><b>Private Experience</b><span>A discreet space with comfort and personal attention in mind.</span></div>
+        <div class="feature"><b>Clean & Considered</b><span>Simple, refined surroundings with thoughtful details.</span></div>
+      </div>
+    </div>
+    <div class="photo-stack reveal" aria-label="Massage atmosphere">
+      <img src="https://i.pinimg.com/736x/97/dc/96/97dc9699bc6c850ecd8776eaee3b7898.jpg" alt="Relaxing massage environment" loading="lazy">
+      <img src="https://i.pinimg.com/736x/85/e4/e0/85e4e0455458e84ff5b39582cf45a340.jpg" alt="Focused massage treatment" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section experience" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">The experience</div><h2>Every detail is designed to help you settle in.</h2></div>
+      <p>From arrival to the final quiet moment, the experience is intentionally simple, private and restorative—without unnecessary distractions.</p>
+    </div>
+    <div class="experience-grid">
+      <article class="exp-card reveal"><div class="num">01</div><h3>Calm Arrival</h3><p>Enter a quieter environment and take a moment to transition from the pace of the city.</p></article>
+      <article class="exp-card reveal"><div class="num">02</div><h3>Personal Focus</h3><p>Discuss your preferred pressure, comfort level and areas that feel most tense before the session.</p></article>
+      <article class="exp-card reveal"><div class="num">03</div><h3>Private Treatment</h3><p>Enjoy a clean, discreet treatment setting intended for focused relaxation and ease.</p></article>
+      <article class="exp-card reveal"><div class="num">04</div><h3>Restful Finish</h3><p>Leave with space to slow down, rehydrate and ease back into the rest of your day.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Services & pricing</div><h2>Choose the rhythm that fits your day.</h2></div>
+      <p>Three massage experiences, each with clear session lengths and pricing. For questions or same-day availability, call the salon directly.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="carousel" data-carousel>
+          <img class="active" src="https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg" alt="Relaxation massage" loading="lazy">
+          <img src="https://i.pinimg.com/736x/4c/2b/cb/4c2bcb39fbc7189277e8e505c2e1bc8f.jpg" alt="Relaxing body massage" loading="lazy">
+          <img src="https://i.pinimg.com/736x/c0/e8/3f/c0e83fc3058518c785d6cfe1b15da601.jpg" alt="Calm bodywork session" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="eyebrow">Relaxation Massage</div>
+          <h3>Massage de détente</h3>
+          <p class="desc">A lighter, customizable massage experience centered on relaxation, positive connection and releasing everyday tension in a calm, unhurried setting.</p>
+          <div class="price-list">
+            <div class="price-row"><span>30 minutes</span><strong>$60</strong></div>
+            <div class="price-row"><span>45 minutes</span><strong>$70</strong></div>
+            <div class="price-row"><span>60 minutes</span><strong>$80</strong></div>
+            <div class="price-row"><span>90 minutes</span><strong>$140</strong></div>
+          </div>
+          <a class="btn" href="tel:+15147265578">Call Now</a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="carousel" data-carousel>
+          <img class="active" src="https://i.pinimg.com/736x/86/47/ef/8647ef5b51553a8e57ca32e6b2ec74f0.jpg" alt="Traditional massage bodywork" loading="lazy">
+          <img src="https://i.pinimg.com/736x/a4/c5/f0/a4c5f0fb2704f75aa94a247e18a4af14.jpg" alt="Focused traditional massage" loading="lazy">
+          <img src="https://i.pinimg.com/736x/85/e4/e0/85e4e0455458e84ff5b39582cf45a340.jpg" alt="Deep focused bodywork" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="eyebrow">Traditional Massage</div>
+          <h3>Massage traditionnel</h3>
+          <p class="desc">A more targeted session designed for areas of tension, mobility and physical fatigue, drawing on traditional approaches such as Tui-Na, deeper tissue work and sports-style techniques.</p>
+          <div class="price-list">
+            <div class="price-row"><span>30 minutes</span><strong>$70</strong></div>
+            <div class="price-row"><span>45 minutes</span><strong>$80</strong></div>
+            <div class="price-row"><span>60 minutes</span><strong>$100</strong></div>
+            <div class="price-row"><span>90 minutes</span><strong>$160</strong></div>
+          </div>
+          <a class="btn" href="tel:+15147265578">Call Now</a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="carousel" data-carousel>
+          <img class="active" src="https://i.pinimg.com/736x/09/31/eb/0931ebab4602ec51313b49b72bb10c1e.jpg" alt="Four hands massage" loading="lazy">
+          <img src="https://i.pinimg.com/736x/a6/b4/26/a6b4261509788cc843fafcac56d38c51.jpg" alt="Four hands synchronized massage" loading="lazy">
+          <img src="https://i.pinimg.com/1200x/2b/81/ad/2b81ad4a2b574b076d5676db9ba13418.jpg" alt="Luxury four hands massage" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="eyebrow">Four Hands Massage</div>
+          <h3>Massage à 4 mains</h3>
+          <p class="desc">An immersive massage experience in which two therapists work in coordinated rhythm, creating a fuller sensory experience and a deeply tranquil atmosphere.</p>
+          <div class="price-list">
+            <div class="price-row"><span>30 minutes</span><strong>$110</strong></div>
+            <div class="price-row"><span>45 minutes</span><strong>$130</strong></div>
+            <div class="price-row"><span>60 minutes</span><strong>$150</strong></div>
+            <div class="price-row"><span>90 minutes</span><strong>$250</strong></div>
+          </div>
+          <a class="btn" href="tel:+15147265578">Call Now</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="note-box reveal">
+      <ul>
+        <li>Additional options start at $20</li>
+        <li>Hot stones and cupping available</li>
+        <li>Snacks and refreshments included</li>
+      </ul>
+      <a class="btn secondary" href="tel:+15147265578">Ask by Phone</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="Atmosphere gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Atmosphere</div><h2>Warm, discreet and intentionally quiet.</h2></div>
+      <p>A refined visual palette of soft light, warm textures and focused treatment moments creates a sense of calm before the massage even begins.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <img src="https://i.pinimg.com/736x/f6/33/48/f6334826491861572c8e532a6a099cdc.jpg" alt="Massage atmosphere" loading="lazy">
+      <img src="https://i.pinimg.com/736x/e6/0b/e7/e60be71086090d2d3f2737b2291242a9.jpg" alt="Relaxing massage details" loading="lazy">
+      <img src="https://i.pinimg.com/736x/a6/b4/26/a6b4261509788cc843fafcac56d38c51.jpg" alt="Four hands massage experience" loading="lazy">
+      <img src="https://i.pinimg.com/1200x/cb/a2/38/cba2382cc3ca28d467b85d939121c8ef.jpg" alt="Focused massage treatment" loading="lazy">
+      <img src="https://i.pinimg.com/736x/21/8f/4c/218f4cd988ca278667bd28ff54a577ff.jpg" alt="Massage care details" loading="lazy">
+    </div>
+
+    <div class="callout reveal">
+      <div>
+        <div class="eyebrow">Prefer to speak directly?</div>
+        <h2>Call the salon for availability.</h2>
+        <p>No online booking form. No extra steps. Call directly to ask about available times, service options and session lengths.</p>
+      </div>
+      <div class="callout-actions">
+        <a class="btn" href="tel:+15147265578">Call 514-726-5578</a>
+        <a class="btn secondary" href="#contact">Location & Hours</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Guest impressions</div><h2>What a thoughtful massage visit should feel like.</h2></div>
+      <p>Sample experience statements reflecting the atmosphere and service qualities guests commonly value in a massage setting.</p>
+    </div>
+  </div>
+  <div class="review-row" id="row1">
+    <div class="review"><div class="stars">★★★★★</div>“Quiet, clean and easy to settle into. The atmosphere felt private from the moment I arrived.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“The session never felt rushed. I appreciated the calm pace and the clear attention to comfort.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A peaceful place to switch off after a long week. Simple, discreet and relaxing.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Calling was straightforward, and the overall experience felt warm and well organized.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Clean surroundings, soft atmosphere and a massage that felt thoughtfully paced.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Quiet, clean and easy to settle into. The atmosphere felt private from the moment I arrived.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“The session never felt rushed. I appreciated the calm pace and the clear attention to comfort.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A peaceful place to switch off after a long week. Simple, discreet and relaxing.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Calling was straightforward, and the overall experience felt warm and well organized.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Clean surroundings, soft atmosphere and a massage that felt thoughtfully paced.”<small>Guest impression</small></div>
+  </div>
+  <div class="review-row reverse" id="row2">
+    <div class="review"><div class="stars">★★★★★</div>“The four-hands experience felt immersive and beautifully synchronized.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A comfortable, low-key environment where privacy and relaxation are clearly priorities.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Everything felt calm and uncluttered, which made it easy to relax into the session.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Good option when you want a focused massage without a complicated booking process.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A nice balance of comfort, quiet and attention to the areas that needed it most.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“The four-hands experience felt immersive and beautifully synchronized.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A comfortable, low-key environment where privacy and relaxation are clearly priorities.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Everything felt calm and uncluttered, which made it easy to relax into the session.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“Good option when you want a focused massage without a complicated booking process.”<small>Guest impression</small></div>
+    <div class="review"><div class="stars">★★★★★</div>“A nice balance of comfort, quiet and attention to the areas that needed it most.”<small>Guest impression</small></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div class="reveal"><div class="eyebrow">FAQ</div><h2>Simple answers before you call.</h2><p style="margin-top:18px">For anything specific to your visit, call the salon directly at 514-726-5578.</p></div>
+    <div class="reveal">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How early should I arrive?<span>+</span></button><div class="faq-a"><div><p>Arriving a few minutes early is a practical way to settle in and discuss your comfort preferences before the session begins.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I get a massage if I have an injury?<span>+</span></button><div class="faq-a"><div><p>If you have a current injury, recent procedure or medical concern, contact the salon first and consider guidance from a qualified healthcare professional before receiving massage.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What is your cancellation policy?<span>+</span></button><div class="faq-a"><div><p>Please call the salon directly for the current cancellation and rescheduling policy, as policies may vary by appointment.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is there parking available?<span>+</span></button><div class="faq-a"><div><p>Parking conditions can change. Call ahead for the most current information about nearby parking options around Côte-des-Neiges.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Contact & location</div><h2>Visit us in Côte-des-Neiges.</h2></div>
+      <p>For availability, pricing questions or service details, the fastest way to reach the salon is by phone.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Salon de Massothérapie Ashley</h3>
+        <div class="info">
+          <div class="info-block"><small>Phone</small><a href="tel:+15147265578">514-726-5578</a></div>
+          <div class="info-block"><small>Address</small><span>5645-4 Chem. de la Côte-des-Neiges<br>Montréal, QC H3T 1Y8</span></div>
+          <div class="info-block"><small>Hours</small><span>9:00–11:30</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:30px">
+          <a class="btn" href="tel:+15147265578">Call Now</a>
+          <a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=5645-4+Chem.+de+la+C%C3%B4te-des-Neiges,+Montr%C3%A9al,+QC+H3T+1Y8">Get Directions</a>
+        </div>
+      </div>
+      <div class="map reveal" aria-label="Map showing Salon de Massothérapie Ashley location">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=5645-4%20Chem.%20de%20la%20C%C3%B4te-des-Neiges%2C%20Montr%C3%A9al%2C%20QC%20H3T%201Y8&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><div class="brand">Salon de Massothérapie <span>Ashley</span></div><p>Quiet care in Côte-des-Neiges, Montréal.</p></div>
+    <p>© <span id="year"></span> Salon de Massothérapie Ashley · 514-726-5578</p>
+  </div>
+</footer>
+
+<script>
+// Sticky header
+const header=document.getElementById('topbar');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20));
+
+// Mobile navigation
+const menuBtn=document.getElementById('menuBtn');
+const navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{
+  const open=navlinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',open);
+  menuBtn.textContent=open?'✕':'☰';
+});
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';
+}));
+
+// Hero background rotation
+const heroSlides=[...document.querySelectorAll('.hero-slide')];
+let heroIndex=0;
+setInterval(()=>{
+  heroSlides[heroIndex].classList.remove('active');
+  heroIndex=(heroIndex+1)%heroSlides.length;
+  heroSlides[heroIndex].classList.add('active');
+},5200);
+
+// Service carousels
+[...document.querySelectorAll('[data-carousel]')].forEach((carousel,i)=>{
+  const imgs=[...carousel.querySelectorAll('img')];
+  let index=0;
+  setInterval(()=>{
+    imgs[index].classList.remove('active');
+    index=(index+1)%imgs.length;
+    imgs[index].classList.add('active');
+  },4200+i*500);
+});
+
+// FAQ accordion
+[...document.querySelectorAll('.faq-q')].forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const open=item.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.querySelector('span').textContent=open?'−':'+';
+  });
+});
+
+// Scroll reveal
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal:not(.visible)').forEach(el=>observer.observe(el));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
